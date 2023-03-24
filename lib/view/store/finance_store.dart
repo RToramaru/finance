@@ -31,6 +31,12 @@ abstract class FinanceStoreBase with Store {
   ObservableList<FinanceModel> financeList = ObservableList<FinanceModel>.of([]);
 
   @observable
+  ObservableList<FinanceModel> expenses = ObservableList<FinanceModel>.of([]);
+
+   @observable
+  ObservableList<FinanceModel> revenues = ObservableList<FinanceModel>.of([]);
+
+  @observable
   int type = 0;
 
   @observable
@@ -136,6 +142,26 @@ abstract class FinanceStoreBase with Store {
   void initStore() {
     initialDate();
     getFinanceList();
+  }
+
+  @action
+  void changeExpenses() {
+    expenses.clear();
+    for (FinanceModel financeModel in financeList) {
+      if (financeModel.type == 1) {
+        expenses.add(financeModel);
+      }
+    }
+  }
+
+  @action
+  void changeRevenues() {
+    revenues.clear();
+    for (FinanceModel financeModel in financeList) {
+      if (financeModel.type == 0) {
+        revenues.add(financeModel);
+      }
+    }
   }
 
 }

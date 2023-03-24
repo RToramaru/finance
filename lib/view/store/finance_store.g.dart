@@ -106,6 +106,38 @@ mixin _$FinanceStore on FinanceStoreBase, Store {
     });
   }
 
+  late final _$expensesAtom =
+      Atom(name: 'FinanceStoreBase.expenses', context: context);
+
+  @override
+  ObservableList<FinanceModel> get expenses {
+    _$expensesAtom.reportRead();
+    return super.expenses;
+  }
+
+  @override
+  set expenses(ObservableList<FinanceModel> value) {
+    _$expensesAtom.reportWrite(value, super.expenses, () {
+      super.expenses = value;
+    });
+  }
+
+  late final _$revenuesAtom =
+      Atom(name: 'FinanceStoreBase.revenues', context: context);
+
+  @override
+  ObservableList<FinanceModel> get revenues {
+    _$revenuesAtom.reportRead();
+    return super.revenues;
+  }
+
+  @override
+  set revenues(ObservableList<FinanceModel> value) {
+    _$revenuesAtom.reportWrite(value, super.revenues, () {
+      super.revenues = value;
+    });
+  }
+
   late final _$typeAtom = Atom(name: 'FinanceStoreBase.type', context: context);
 
   @override
@@ -306,6 +338,28 @@ mixin _$FinanceStore on FinanceStoreBase, Store {
   }
 
   @override
+  void changeExpenses() {
+    final _$actionInfo = _$FinanceStoreBaseActionController.startAction(
+        name: 'FinanceStoreBase.changeExpenses');
+    try {
+      return super.changeExpenses();
+    } finally {
+      _$FinanceStoreBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  void changeRevenues() {
+    final _$actionInfo = _$FinanceStoreBaseActionController.startAction(
+        name: 'FinanceStoreBase.changeRevenues');
+    try {
+      return super.changeRevenues();
+    } finally {
+      _$FinanceStoreBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
 currentIndex: ${currentIndex},
@@ -314,6 +368,8 @@ descriptionController: ${descriptionController},
 amountController: ${amountController},
 dateController: ${dateController},
 financeList: ${financeList},
+expenses: ${expenses},
+revenues: ${revenues},
 type: ${type},
 total: ${total},
 financeModel: ${financeModel},
