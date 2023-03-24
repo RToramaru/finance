@@ -46,7 +46,7 @@ class DatabaseCore {
 
   Future<List<Map<String, dynamic>>> queryRowsByDates(String startDate, String endDate) async {
     Database db = await instance.database;
-    return await db.query(table, where: '$columnDate BETWEEN ? AND ?', whereArgs: [startDate, endDate]);
+    return await db.query(table, where: '$columnDate BETWEEN ? AND ?', whereArgs: [startDate, endDate], orderBy: '$columnDate ASC');
 
   }
 
