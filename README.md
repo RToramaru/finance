@@ -1,16 +1,27 @@
-# finance
+# Finance
 
-A new Flutter project.
+### Sobre
+Finance é um aplicativo Flutter para controle e gestão de finanças.
 
-## Getting Started
+### Tecnologias
+* Flutter
+* SQLITE
 
-This project is a starting point for a Flutter application.
+### Instalação e uso
+Para instalação primeiramente clone o repositório local, em seguida abra o diretório salvo e instale as dependências
 
-A few resources to get you started if this is your first Flutter project:
+```
+git clone https://github.com/RToramaru/finance.git
+cd finance
+flutter pub get
+flutter run
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Demonstração
+
+![](/screens/1.png)
+![](/screens/2.png)
+![](/screens/3.png)
+![](/screens/4.png)
+![](/screens/5.png)
