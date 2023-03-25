@@ -357,7 +357,7 @@ class _HomeFragmentsState extends State<HomeFragments> {
       TableCalendar(
         firstDay: DateTime.utc(2010, 10, 16),
         lastDay: DateTime.utc(2030, 3, 14),
-        focusedDay: DateTime.now(),
+        focusedDay: financeStore.focusedDay,
         locale: "pt_BR",
         headerStyle: const HeaderStyle(
             formatButtonShowsNext: false,
