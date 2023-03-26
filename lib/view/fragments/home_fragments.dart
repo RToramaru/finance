@@ -59,11 +59,7 @@ class _HomeFragmentsState extends State<HomeFragments> {
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   Padding(
-                    padding: EdgeInsets.only(
-                      left: MediaQuery.of(context).size.width * 0.05,
-                      top: MediaQuery.of(context).size.width * 0.04,
-                      bottom: MediaQuery.of(context).size.width * 0.02,
-                    ),
+                    padding: const EdgeInsets.all(8),
                     child: Text(
                       "Total",
                       style: TextStyle(
